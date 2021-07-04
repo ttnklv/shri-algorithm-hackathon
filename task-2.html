@@ -6,22 +6,26 @@
 </head>
 <body>
 <script type="text/javascript">
-    const arr = [2, 3, 9, 1, 6]
+    const test_arr = [2, 3, 9, 1, 6]
 
-    for (let min = 0; min < arr.length - 1; min++) {
-        let least = min
-        for (let j = min + 1; j < arr.length; j++) {
-            if (arr[j] < arr[least]) {
-                least = j
+    const sorting = (arr) => {
+        for (let min = 0; min < arr.length - 1; min++) {
+            let least = min
+            for (let j = min + 1; j < arr.length; j++) {
+                if (arr[j] < arr[least]) {
+                    least = j
+                }
             }
-        }
 
-        const transition = arr[min]
-        arr[min] = arr[least]
-        arr[least] = transition
+            const transition = arr[min]
+            arr[min] = arr[least]
+            arr[least] = transition
+        }
     }
 
-    console.log(arr)
+    sorting(test_arr)
+
+    console.log(test_arr)
 
 </script>
 </body>

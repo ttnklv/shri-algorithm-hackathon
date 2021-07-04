@@ -6,20 +6,23 @@
 </head>
 <body>
   <script type="text/javascript">
-      // Сортировка пуз
-      const arr = [2, 3, 9, 1, 6]
+      const test_arr = [2, 3, 9, 1, 6]
 
-      for (let j = arr.length - 1; j > 0; j--) {
-          for (let i = 0; i < j; i++) {
-              if (arr[i] > arr[i + 1]) {
-                  const transition = arr[i]
-                  arr[i] = arr[i + 1]
-                  arr[i + 1] = transition
+      const sorting = (arr) => {
+          for (let j = arr.length - 1; j > 0; j--) {
+              for (let i = 0; i < j; i++) {
+                  if (arr[i] > arr[i + 1]) {
+                      const transition = arr[i]
+                      arr[i] = arr[i + 1]
+                      arr[i + 1] = transition
+                  }
               }
           }
       }
 
-      console.log(arr)
+      sorting(test_arr)
+
+      console.log(test_arr)
   </script>
 </body>
 </html>
