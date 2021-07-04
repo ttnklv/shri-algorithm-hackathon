@@ -6,7 +6,20 @@
 </head>
 <body>
   <script type="text/javascript">
-    console.log('Hello task-1...');
+      // Сортировка пуз
+      const arr = [2, 3, 9, 1, 6]
+
+      for (let j = arr.length - 1; j > 0; j--) {
+          for (let i = 0; i < j; i++) {
+              if (arr[i] > arr[i + 1]) {
+                  const transition = arr[i]
+                  arr[i] = arr[i + 1]
+                  arr[i + 1] = transition
+              }
+          }
+      }
+
+      console.log(arr)
   </script>
 </body>
 </html>
