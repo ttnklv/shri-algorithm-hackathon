@@ -7,7 +7,7 @@
 <body>
 <script type="text/javascript">
     const isPrimeNumber = (num) => {
-        for (let i = 2; i * i < num; i++) {
+        for (let i = 2; i < num; i++) {
             if (num % i === 0) {
                 return false
             }
@@ -15,7 +15,20 @@
         return true
     }
 
-    console.log(isPrimeNumber(16))
+    const getPrimeNumbers = (num) => {
+        const ans = []
+
+        for (let i = 1; i < num; i++) {
+            if (isPrimeNumber(i)) {
+                console.log(isPrimeNumber(i), i)
+                ans.push(i)
+            }
+        }
+
+        return ans
+    }
+
+    console.log(getPrimeNumbers(12))
 </script>
 </body>
 </html>
