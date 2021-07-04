@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>task-4</title>
+    <meta charset="utf-8">
+    <title>task-4</title>
 </head>
 <body>
-  <script type="text/javascript">
-    console.log('Hello task-4');
-  </script>
+<script type="text/javascript">
+    const tree = {
+        value: 1,
+        children: [
+            {
+                value: 2,
+                children: [
+                    {value: 4},
+                    {value: 5}
+                ]
+            },
+            {
+                value: 3,
+                children: [
+                    {value: 6}
+                ]
+            }
+        ]
+    }
+
+    const recursiveTraversal = (item) => {
+        console.log(item.value)
+        if (Array.isArray(item.children)) {
+            for (const child of item.children) {
+                recursiveTraversal(child)
+            }
+        }
+    }
+
+    recursiveTraversal(tree)
+</script>
 </body>
 </html>
