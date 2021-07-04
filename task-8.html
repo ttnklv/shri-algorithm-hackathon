@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-8</title>
+</head>
+<body>
+<script type="text/javascript">
+    const arr_test = [3, 6, 7, 9, 15, 16]
+
+    const binarySearch = (arr, item) => {
+        let left = 0
+        let right = arr.length
+        let ans = -1
+
+        while (left < right) {
+            const index = Math.floor((left + right) / 2)
+
+            if (arr[index] > item) {
+                right = index
+            } else if (arr[index] < item) {
+                left = index
+            } else {
+                ans = index
+                break
+            }
+
+            if ((left === 0 && right === 1) || (left === arr.length - 1 && right === arr.length)) {
+                break
+            }
+        }
+
+        return ans
+    }
+
+    console.log(binarySearch(arr_test, 17))
+    console.log(arr_test.indexOf(17))
+</script>
+</body>
+</html>
