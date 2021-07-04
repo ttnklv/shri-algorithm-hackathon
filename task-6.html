@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>task-6</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+      const isValid = (str) => {
+          const open = ['{', '(', '[']
+          const close = ['}', ')', ']']
+
+          const stack = []
+          const chars = str.split('')
+
+          for (const char of chars) {
+              if (open.includes(char)) {
+                  stack.push(char)
+              }
+
+              if (close.includes(char)) {
+                  const index = close.indexOf(char)
+                  const charFromStack = stack.pop()
+                  if (charFromStack !== open[index]) {
+                      return false
+                  }
+              }
+          }
+
+          return stack.length === 0
+      }
+
+      console.log(isValid('[(){}()()]'))
+  </script>
+</body>
+</html>
