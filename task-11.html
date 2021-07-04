@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-11</title>
+</head>
+<body>
+<script type="text/javascript">
+    const logSpiralMatrix = (n) => {
+        let ans = []
+        let i = 0
+        let rotation = 0
+        let step = 1
+
+        for (let j = 0; j < n; j++) {
+            ans[j] = []
+        }
+
+        while (step + 1 < n * n) {
+            rotation++
+            for (let j = rotation - 1; j < n - rotation + 1; j++) {
+                ans[rotation - 1][j] = step
+                step++
+            }
+
+            for (let j = rotation; j < n - rotation + 1; j++) {
+                ans[j][n - rotation] = step
+                step++
+            }
+
+            for (let j = n - rotation - 1; j >= rotation - 1; j--) {
+                ans[n - rotation][j] = step
+                step++
+            }
+
+            for (let j = n - rotation - 1; j >= rotation; j--) {
+                ans[j][rotation - 1] = step
+                step++
+            }
+        }
+
+        return ans
+
+    }
+
+    console.log(logSpiralMatrix(4))
+</script>
+</body>
+</html>
