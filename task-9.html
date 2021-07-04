@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-9</title>
+</head>
+<body>
+<script type="text/javascript">
+    const list_test = {
+        value: 1,
+        next: {
+            value: 2,
+            next: {
+                value: 3,
+                next: {
+                    value: 4,
+                    next: null
+                }
+            }
+        }
+    }
+
+    const flipList = (list) => {
+        let current = list
+        let next = null
+        let prev = null
+
+        while (current) {
+            next = current.next
+            prev = { value: current.value, next: prev }
+            current = next
+        }
+
+        return prev
+    }
+
+    console.log(JSON.stringify(list_test))
+    console.log(JSON.stringify(flipList(list_test)))
+</script>
+</body>
+</html>
