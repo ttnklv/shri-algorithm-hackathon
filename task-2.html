@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>task-2</title>
+    <meta charset="utf-8">
+    <title>task-2</title>
 </head>
 <body>
-  <script type="text/javascript">
-    console.log('Hello task-2');
-  </script>
+<script type="text/javascript">
+    const arr = [2, 3, 9, 1, 6]
+
+    for (let min = 0; min < arr.length - 1; min++) {
+        let least = min
+        for (let j = min + 1; j < arr.length; j++) {
+            if (arr[j] < arr[least]) {
+                least = j
+            }
+        }
+
+        const transition = arr[min]
+        arr[min] = arr[least]
+        arr[least] = transition
+    }
+
+    console.log(arr)
+
+</script>
 </body>
 </html>
