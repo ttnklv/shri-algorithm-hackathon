@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>task-10</title>
+</head>
+<body>
+<script type="text/javascript">
+    const test_arr = [1, -2, 3, 4, 1, -9, 6]
+
+    const getMaxSum = (arr) => {
+        let currentSum = 0
+        let maxSum = 0
+
+        for (const item of arr) {
+            currentSum += item
+
+            if (maxSum < currentSum) {
+                maxSum = currentSum
+            }
+
+            if (currentSum < 0) {
+                currentSum = 0
+            }
+        }
+
+        return maxSum
+    }
+
+    console.log(getMaxSum(test_arr))
+
+</script>
+</body>
+</html>
